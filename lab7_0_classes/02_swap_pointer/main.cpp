@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+// a and b hold the ADDRESSES of the caller's variables.
+// *a and *b (dereferencing) reach the variables themselves.
+void SwapNumbers(int* a, int* b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main()
+{
+    int varA = 25;
+    int varB = 100;
+
+    cout << "varA before swap: " << varA << endl;
+    cout << "varB before swap: " << varB << endl;
+
+    SwapNumbers(&varA, &varB);   // pass the addresses with &
+
+    cout << "varA after swap: " << varA << endl;
+    cout << "varB after swap: " << varB << endl;
+    return 0;
+}
